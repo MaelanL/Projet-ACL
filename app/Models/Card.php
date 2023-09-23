@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 
 /**
  * Classe représentant une carte.
- * 
+ *
  * @property int $id -.
  * @property string $value -.
  * @property string $color -.
@@ -24,4 +26,9 @@ class Card extends Model
 	public $incrementing = true;
 	protected $keyType = "integer";
 	public $timestamps = false;
+
+    public function cards_games_links(): HasMany
+    {
+        return $this->hasMany(CardsGamesLink::class);
+    }
 }

@@ -12,21 +12,21 @@ Télécharger xampp 8.2.4 : https://www.apachefriends.org/download.html
 
 Installer composer : https://getcomposer.org/download/
 
-
-
 ## Mise en place du projet 
 
-- Génerer projet laravel : composer create-project laravel/laravel acl-project
+- Une fois le dépôt cloné, executer les commandes suivantes : 
+ - composer update 
+ - npm update --force
 
-- Configuration de la bdd dans le fichier .env :
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=aclDB
-DB_USERNAME=root
-DB_PASSWORD=
+- Renommer le fichier .env.example -> .env
 
-- Installer react : php artisan ui react
+# Lancer le projet
+
+Lancer les serveurs apache et mysql dans xampp 
+
+A la racine du projet executer les commandes suivantes : 
+- php artisan serve
+- npm run dev
 
 
 

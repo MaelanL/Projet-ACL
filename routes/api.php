@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('products', 'App\Http\Controllers\CardsController@getCards');
+Route::get('cards/{gameName}', 'App\Http\Controllers\CardsController@getCards');

@@ -28,7 +28,7 @@ export class Home extends React.Component<HomeProperties,HomeState>
 
 
   componentDidMount() {
-    fetch('/api/products')
+    fetch('/api/cards/jeu')
         .then(response => {
             return response.json();
         })
