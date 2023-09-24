@@ -19,5 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+// Retourne les cartes d'un jeu.
 Route::get('cards/{gameName}', 'App\Http\Controllers\CardsController@getCards');

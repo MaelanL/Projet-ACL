@@ -12,10 +12,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * Classe représentant une carte.
  *
  * @property int $id -.
- * @property string $value -.
- * @property string $color -.
- * @property string $type -.
- * @property int $points -.
+ * @property string $value - La valeur de la carte.
+ * @property string $color - La couleur de la carte.
+ * @property string $type - Le type de la carte.
+ * @property int $points - Le nombre de points de la carte.
  */
 class Card extends Model
 {
@@ -29,6 +29,6 @@ class Card extends Model
 
     public function cards_games_links(): HasMany
     {
-        return $this->hasMany(CardsGamesLink::class);
+			return $this->hasMany(CardsGamesLink::class);
     }
 }

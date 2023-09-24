@@ -32,13 +32,13 @@ A la racine du projet executer les commandes suivantes :
 
 # Commandes
 
+- Créer un model php : php artisan make:model ClassName -m
+- Migrations (permet de créer/modifier les tables) : php artisan migrate
+- Créer un seeder pour insérer en dur dans la bdd : php artisan make:seeder TableNameSeeder
+- Insérer les données d'un seeder en bdd : php artisan db:seed --class=TableNameSeeder
+- Créer un controlleur : php artisan make:controller TableNameController
 
-php artisan serve
 
-php artisan make:model ClassName -m
 
-php artisan migrate
 
-php artisan make:seeder TableNameSeeder
-php artisan db:seed --class=TableNameSeeder
-php artisan make:controller TableNameController
+

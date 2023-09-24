@@ -1,17 +1,26 @@
-import React from "react";
+import * as React from 'react';
+import Card from "../models/Card";
 
+/**
+ * Propriétés de la page d'accueil.
+ */
 export interface HomeProperties
 {
 
 }
 
-
+/**
+ * Etats de la page d'accueil.
+ */
 export interface HomeState
 {
-  test: string;
+	// test.
+  cards : Card[];
 }
 
-
+/**
+ * Classe de l'accueil de l'application.
+ */
 export class Home extends React.Component<HomeProperties,HomeState>
 {
 
@@ -20,21 +29,23 @@ export class Home extends React.Component<HomeProperties,HomeState>
 
     this.state =
     {
-      test: "Ford",
+      cards: null,
     };
 
   }
 
 
 
-  componentDidMount() {
+  componentDidMount(): void
+	{
+		// test
     fetch('/api/cards/jeu')
         .then(response => {
-            return response.json();
+					return response.json();
         })
-        .then(products => {
-            console.log(products);
-            //Fetched product is stored in the stat
+        .then((cards : Array<Card>)=> {
+					this.setState({cards: cards})
+            console.log(cards);
         });
   }
 
