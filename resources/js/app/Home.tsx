@@ -1,5 +1,7 @@
 import * as React from 'react';
 import Card from "../models/Card";
+import "../../css/Home.css"
+import "../../css/app.css"
 
 /**
  * Propriétés de la page d'accueil.
@@ -29,7 +31,7 @@ export class Home extends React.Component<HomeProperties,HomeState>
 
     this.state =
     {
-      cards: null,
+      cards: [],
     };
 
   }
@@ -49,10 +51,36 @@ export class Home extends React.Component<HomeProperties,HomeState>
         });
   }
 
+	protected test(): void
+	{
+		fetch( 'api/test/'+this.state.cards[0].id+"/"+this.state.cards[1].id, {
+			method:'post',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(this.state.cards.splice(0,2))
+		})
+			.then(response => {
+				return response.json();
+			})
+			.then( data => {
+				console.log(data);
+			})
+	}
+
   render() {
     return (
       <div>
         <h1>App</h1>
+				<i className="ri-admin-line"></i>
+
+
+
+				<button onClick={() => {this.test()}}>
+					<i className="ri-admin-fill"></i>
+					test
+				</button>
       </div>
     );
   }

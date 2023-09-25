@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger("card_id");
-            $table->string("game_name");
+            $table->unsignedBigInteger("game_id");
 
             $table->foreign("card_id")
                 ->references("id")->on("cards");
 
-            $table->foreign("game_name")
-                ->references("name")->on("games");
+            $table->foreign("game_id")
+                ->references("id")->on("games");
         });
 
 

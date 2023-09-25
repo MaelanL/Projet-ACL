@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 /**
  * Classe représentant une carte.
  *
- * @property int $id -.
+ * @property int $id - Identifiant de la carte.
  * @property string $value - La valeur de la carte.
  * @property string $color - La couleur de la carte.
  * @property string $type - Le type de la carte.

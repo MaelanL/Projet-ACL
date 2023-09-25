@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Classe représentant un jeu de l'application.
  *
- * @property string $name -.
- * @property string $description -.
+ * @property int $id - Identifiant du jeu.
+ * @property string $name - Nom du jeu.
+ * @property string $description - Description du jeu.
  *
  */
 class Game extends Model
@@ -17,9 +18,9 @@ class Game extends Model
     use HasFactory;
 
     protected $table = "games";
-    protected $primaryKey = "name";
+    protected $primaryKey = "id";
     public $incrementing = false;
-    protected $keyType = "string";
+    protected $keyType = "integer";
     public $timestamps = false;
 
 

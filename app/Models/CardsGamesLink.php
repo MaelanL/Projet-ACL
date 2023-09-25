@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
+ * Classe pivot entre un jeu et ses cartes.
  *
- *
- * @property int $id -.
- * @property int $card_id -.
- * @property string $game_name -.
+ * @property int $id - Identifiant.
+ * @property int $card_id - Identifiant de la carte.
+ * @property int $game_id - Identifiant du jeu.
  */
 class CardsGamesLink extends Model
 {
